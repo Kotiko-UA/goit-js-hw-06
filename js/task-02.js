@@ -20,4 +20,3 @@ ingredients.forEach((ingredient) => {
 
 const allIngridientsEl = document.querySelector('#ingredients');
 allIngridientsEl.append(...ingredientItemListEl);
-console.log(allIngridientsEl);
