@@ -10,8 +10,11 @@ const ingredientItemListEl = [];
 
 ingredients.forEach((ingredient) => {
   const addInredientEl = document.createElement('li');
+
   addInredientEl.textContent = `${ingredient}`;
+
   addInredientEl.classList.add('item');
+
   ingredientItemListEl.push(addInredientEl);
 });
 
