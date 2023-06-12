@@ -19,4 +19,3 @@ const createGalletry = images
   })
   .join('');
 galleryEll.insertAdjacentHTML('beforeend', createGalletry);
-console.log(createGalletry);
