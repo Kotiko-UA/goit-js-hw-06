@@ -10,8 +10,8 @@ function onSubmit(event) {
     return window.alert('Please fill in all the fields!');
   }
   const formFills = {};
-  formFills[email.value] = password.value;
-
+  formFills[email.name] = email.value;
+  formFills[password.name] = password.value;
   console.log(formFills);
   event.currentTarget.reset();
 }
