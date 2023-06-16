@@ -16,12 +16,10 @@ function onInputValue(event) {
   counter = event.currentTarget.value;
 }
 
-const arrDivEl = [];
-
 refs.buttonCreate.addEventListener('click', () => createBoxes(counter));
 function createBoxes(amount) {
   let sizeDivEl = 30;
-
+  const arrDivEl = [];
   for (let i = 0; i < amount; i += 1) {
     arrDivEl.push(
       `<div style ='width:${sizeDivEl + 10 * i}px; height:${
