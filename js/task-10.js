@@ -10,14 +10,15 @@ const refs = {
   boxEl: document.querySelector('#boxes'),
 };
 
-refs.buttonCreate.addEventListener('click', createBoxes);
-
 refs.inputEl.addEventListener('change', onInputValue);
-
+let counter = 0;
 function onInputValue(event) {
-  event.currentTarget.value;
+  counter = event.currentTarget.value;
 }
+
 const arrDivEl = [];
+
+refs.buttonCreate.addEventListener('click', () => createBoxes(counter));
 function createBoxes(amount) {
   let sizeDivEl = 30;
 
@@ -28,7 +29,13 @@ function createBoxes(amount) {
       }px;background-color: ${getRandomHexColor()};'></div>`
     );
   }
+  refs.boxEl.innerHTML = '';
+  refs.boxEl.insertAdjacentHTML('beforeend', arrDivEl.join(''));
+  arrDivEl.length = 0;
 }
-createBoxes(6);
-refs.boxEl.insertAdjacentHTML('beforeend', arrDivEl.join(''));
-console.log(refs.boxEl);
+
+refs.buttonDestroy.addEventListener('click', onDestroyButton);
+
+function onDestroyButton() {
+  refs.boxEl.innerHTML = '';
+}
